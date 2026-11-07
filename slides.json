@@ -95,6 +95,21 @@
       ]
     },
     {
+      "kicker": "Weather · Robstown",
+      "title": "Flood Watch This Weekend",
+      "body": "A Flood Watch is in effect from Saturday noon through Monday noon. Expect 2–4 inches of rain, locally up to 5 inches, heaviest on Sunday.",
+      "bullets": [
+        {
+          "lead": "Turn Around, Don’t Drown",
+          "text": "Never drive through flooded roads — 6 inches of water can knock an adult down, 12 inches can float a small car."
+        },
+        {
+          "lead": "Source",
+          "text": "National Weather Service, Corpus Christi."
+        }
+      ]
+    },
+    {
       "kicker": "Around town",
       "title": "Getting around Robstown",
       "bullets": [
