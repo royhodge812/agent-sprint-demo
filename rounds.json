@@ -1,1 +1,12 @@
-{"rounds":[]}
+{
+  "rounds": [
+    {
+      "round": 1,
+      "time": "2026-11-07T09:36:54-06:00",
+      "gemini_found": "Hotel Brendle opened 1914; RTHL Marker No. 2571 designated 1984; opened with 36 rooms; 601 East Avenue A; built at the Texas-Mexican / St. Louis, Brownsville & Mexico railroad junction by C.C. Brendle and V.V. Elick; three-story with brick parapet, red tile roof on brackets, semi-circular arch doorway; Sons of Hermann ownership after the Great Depression; Robstown as birthplace of Texas Hold'em.",
+      "muse_verified_or_corrected": "All core facts confirmed against the official THC marker text (texashistoricalmarkers.weebly.com, stxmaps.com) and brendlehg.com. Two claims left out as unverified: traveling salesmen displaying goods (not in the marker text) and any hotel-specific Texas Hold'em connection (only the town-level fact is sourced, via Texas HCR 109, 2007). Corrected wording: 'opened with 36 rooms' (original count), not a current room count.",
+      "change_made": "Added one new slide 'The Hotel Brendle — Since 1914' to the lobby loop artifact (hotel-brendle-lobby-loop-preview), placed after the existing history slide. Dark theme, existing slides, both Fixing the Brendle slots, and the 'Be careful kids, have fun' sign-off unchanged.",
+      "status": "complete"
+    }
+  ]
+}
