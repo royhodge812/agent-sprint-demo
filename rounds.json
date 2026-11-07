@@ -7,6 +7,14 @@
       "muse_verified_or_corrected": "All core facts confirmed against the official THC marker text (texashistoricalmarkers.weebly.com, stxmaps.com) and brendlehg.com. Two claims left out as unverified: traveling salesmen displaying goods (not in the marker text) and any hotel-specific Texas Hold'em connection (only the town-level fact is sourced, via Texas HCR 109, 2007). Corrected wording: 'opened with 36 rooms' (original count), not a current room count.",
       "change_made": "Added one new slide 'The Hotel Brendle — Since 1914' to the lobby loop artifact (hotel-brendle-lobby-loop-preview), placed after the existing history slide. Dark theme, existing slides, both Fixing the Brendle slots, and the 'Be careful kids, have fun' sign-off unchanged.",
       "status": "complete"
+    },
+    {
+      "round": 2,
+      "time": "2026-11-07T09:51:29-06:00",
+      "gemini_found": "Flood Watch Sat Nov 7–Mon Nov 9, 2026; Marginal Risk of Excessive Rainfall; heavy rain tonight (75%) and tomorrow (75%); 1–3 in total, isolated up to 5 in; local Robstown figures 1.23 in Sat / 1.67 in Sun; NWS safety guidance (Turn Around Don't Drown, 6 in knocks an adult down, 12 in floats a small car).",
+      "muse_verified_or_corrected": "Flood Watch confirmed at the source: NWS Corpus Christi issued Nov 6 at 8:17 PM CST, effective Sat Nov 7 12:00 PM CST through Mon Nov 9 12:00 PM CST, covering Inland/Coastal Nueces. Corrected rainfall to NWS figures: widespread 2–4 in, locally up to 5+ in (Gemini's 1–3 in and Robstown 1.23/1.67 in not confirmed). Corrected timing: heaviest rain is Sunday (90% chance, thunderstorms), not Saturday night (~20%). Corrected risk: Marginal Sat, Slight (level 2 of 4) Sunday. Kept Turn Around Don't Drown — standard NWS guidance cited in the watch text.",
+      "change_made": "Added one new slide 'Flood Watch This Weekend' to the lobby loop artifact (hotel-brendle-lobby-loop-preview), placed after the 'Since 1914' history slide. Watch window Sat Nov 7 12:00 PM – Mon Nov 9 12:00 PM, 2–4 in rain (locally up to 5 in, heaviest Sunday), Turn Around Don't Drown callout, NWS Corpus Christi source line. Dark theme, existing slides, both Fixing the Brendle slots, and the 'Be careful kids, have fun' sign-off unchanged.",
+      "status": "complete"
     }
   ]
 }
