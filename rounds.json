@@ -15,6 +15,14 @@
       "muse_verified_or_corrected": "Flood Watch confirmed at the source: NWS Corpus Christi issued Nov 6 at 8:17 PM CST, effective Sat Nov 7 12:00 PM CST through Mon Nov 9 12:00 PM CST, covering Inland/Coastal Nueces. Corrected rainfall to NWS figures: widespread 2–4 in, locally up to 5+ in (Gemini's 1–3 in and Robstown 1.23/1.67 in not confirmed). Corrected timing: heaviest rain is Sunday (90% chance, thunderstorms), not Saturday night (~20%). Corrected risk: Marginal Sat, Slight (level 2 of 4) Sunday. Kept Turn Around Don't Drown — standard NWS guidance cited in the watch text.",
       "change_made": "Added one new slide 'Flood Watch This Weekend' to the lobby loop artifact (hotel-brendle-lobby-loop-preview), placed after the 'Since 1914' history slide. Watch window Sat Nov 7 12:00 PM – Mon Nov 9 12:00 PM, 2–4 in rain (locally up to 5 in, heaviest Sunday), Turn Around Don't Drown callout, NWS Corpus Christi source line. Dark theme, existing slides, both Fixing the Brendle slots, and the 'Be careful kids, have fun' sign-off unchanged.",
       "status": "complete"
+    },
+    {
+      "round": 3,
+      "time": "2026-11-07T10:13:00-06:00",
+      "gemini_found": "Church of Grace, 211 E Main Ave, Robstown, TX 78380; Sunday School 9:00 AM, Regular Worship 10:00 AM; Wednesday Bible Study 7:00-8:00 PM; Southern Baptist; Pastor Chris DeLuna; phone (361) 960-4198; website churchofgrace.cc; Facebook churchofgracerobstown; traditional hymns and contemporary worship; community service and youth group.",
+      "muse_verified_or_corrected": "Address, Sunday 9:00 AM school / 10:00 AM worship, Wednesday 7:00-8:00 PM, Southern Baptist affiliation, and Pastor Chris DeLuna all confirmed directly on the church's SermonAudio page (sermonaudio.com/broadcasters/churchofgrace, crawled Nov 7). Wednesday 7:00 PM also confirmed by the public location listing (Wed 7:00-8:15 PM, Sun 10:00 AM-12:30 PM). CORRECTED the backlog's Wednesday 6:30 PM to 7:00 PM — three sources agree on 7:00 PM. LEFT OUT: phone number (SermonAudio/Gemini say 361-960-4198 but an SBC directory snippet gave 361-752-0016); service style and youth/community programs (Gemini only, not independently confirmed). The church's own site churchofgrace.cc would not load (DNS failure, confirmed by live browser check) — noted on the slide.",
+      "change_made": "Added one new slide 'Church of Grace' to the lobby loop artifact (hotel-brendle-lobby-loop-preview), placed immediately after the 'Flood Watch This Weekend' slide, and the same slide appended to slides.json on GitHub (commit b4867812) — Sunday 9:00 AM school / 10:00 AM worship, Wednesday Bible study 7:00-8:00 PM, 211 E Main Ave, Pastor Chris DeLuna, Southern Baptist. Dark theme, existing slides, both Fixing the Brendle slots, and the 'Be careful kids, have fun' sign-off unchanged.",
+      "status": "complete"
     }
   ]
 }
