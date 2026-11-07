@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Sprint Demo — Muse + Gemini</title>
+<style>
+  body { background:#141414; color:#e8e8e8; font-family: system-ui, -apple-system, sans-serif;
+         max-width: 860px; margin: 0 auto; padding: 24px 18px 64px; line-height: 1.55; }
+  h1 { font-size: 1.6rem; margin-bottom: .2em; }
+  h2 { font-size: 1.2rem; margin-top: 2em; border-bottom: 1px solid #333; padding-bottom: .3em; }
+  p, li { font-size: 1rem; }
+  .sub { color:#aaa; }
+  .status { background:#1e2a1e; border:1px solid #3a5a3a; padding:12px 16px; border-radius:8px; }
+  table { width:100%; border-collapse: collapse; margin-top: 12px; font-size: .95rem; }
+  th, td { border:1px solid #333; padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#222; }
+  td.pending { color:#999; }
+  ul { padding-left: 1.2em; }
+  code { background:#222; padding:1px 5px; border-radius:4px; }
+  a { color:#8ab4f8; }
+</style>
+</head>
+<body>
+
+<h1>Agent Sprint Demo</h1>
+<p class="sub">A public demo of two AI agents working together, round by round, where anyone can watch the work happen.</p>
+
+<h2>What this demo is</h2>
+<p><strong>Muse</strong> is the lead coordinator. <strong>Gemini</strong> is the researcher. They work in rounds on one real job: improving the lobby display loop for Hotel Brendle in Robstown, Texas.</p>
+<p>Each round, Gemini researches one new item for the loop. Muse checks every fact against real sources and corrects what is wrong — before anything is published. Then the loop gains one new verified addition.</p>
+<p>This is a <strong>2-hour sprint: 8 rounds, one every 15 minutes, then it stops.</strong> After the sprint, the loop goes back to a weekly rhythm, because lobby content does not naturally change every 15 minutes. The fast pace is how you watch the machine work, not a forever speed.</p>
+<p>One rule for every round: <strong>no fake changes.</strong> If a round cannot verify something, it says so instead of inventing an update.</p>
+
+<div class="status" id="sprint-status"><strong>Sprint status:</strong> Not started. Rounds will appear below when the sprint begins.</div>
+
+<h2>The team</h2>
+<ul>
+  <li><strong>Roy</strong> — owner. Sets the goals, makes the decisions, and gives the final yes on anything consequential.</li>
+  <li><strong>Muse</strong> — lead coordinator. Breaks goals into tasks, hands them out, checks the work, and reports back once.</li>
+  <li><strong>Copilot</strong> — planning and quality checking.</li>
+  <li><strong>Gemini</strong> — research and verification.</li>
+  <li><strong>ChatGPT</strong> — strategy, drafting, and analysis.</li>
+  <li><strong>Grok</strong> — stress-testing.</li>
+</ul>
+<p>Full roster, code words, and working rules live in the <code>context/</code> folder of this repo.</p>
+
+<h2>Approval gates</h2>
+<p>Nothing consequential moves without Roy's explicit yes on that specific item — no spending, sending, posting, publishing, filing, provisioning, deleting, sharing publicly, changing an account, or signing. Silence is never a yes. Items that time out are held, not approved. Muse may approve internal, reversible steps only, and every such approval is logged so Roy can review or reverse it.</p>
+
+<h2>Sprint rounds</h2>
+<p>One row per round. Each row shows what Gemini found, what Muse verified or corrected, and what changed in the loop.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Round</th>
+      <th>Time</th>
+      <th>Gemini found</th>
+      <th>Muse verified / corrected</th>
+      <th>Change made</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="rounds-body">
+    <!-- Filled by the script below from rounds.json -->
+  </tbody>
+</table>
+
+<h2>The lobby loop</h2>
+<p>The Hotel Brendle lobby loop is a rotating display for the hotel lobby — general information and videos only. It currently has 11 slides:</p>
+<ul>
+  <li>Welcome message — "Welcome in, neighbors"</li>
+  <li>Community Board</li>
+  <li>Being Good Neighbors</li>
+  <li>Landmark slide — the hotel's history, designated 1984, Marker No. 2571</li>
+  <li>Around Robstown — including Church of Grace (Wednesday Bible study, Sunday worship) and Route 27 / Stop 1266</li>
+  <li>Two reserved slots for the "Fixing the Brendle" video series</li>
+  <li>Sign-off — "Be careful kids, have fun."</li>
+</ul>
+<p>Guardrail: the loop never shows tenant names, rent amounts, or any private data. It is general information only.</p>
+<p>Loop preview link added when the sprint starts.</p>
+
+<script>
+(function () {
+  var TOTAL_ROUNDS = 8;
+  var body = document.getElementById('rounds-body');
+  var statusEl = document.getElementById('sprint-status');
+
+  function placeholderRow(n) {
+    return '<tr><td>Round ' + n + '</td><td class="pending">—</td>' +
+      '<td class="pending">Awaiting sprint start</td>' +
+      '<td class="pending">Awaiting sprint start</td>' +
+      '<td class="pending">Awaiting sprint start</td>' +
+      '<td class="pending">Pending</td></tr>';
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function render(rounds) {
+    var html = '';
+    for (var i = 1; i <= TOTAL_ROUNDS; i++) {
+      var r = rounds[i - 1];
+      if (!r) { html += placeholderRow(i); continue; }
+      html += '<tr><td>Round ' + esc(r.round) + '</td>' +
+        '<td>' + esc(r.time) + '</td>' +
+        '<td>' + esc(r.gemini_found) + '</td>' +
+        '<td>' + esc(r.muse_verified_or_corrected) + '</td>' +
+        '<td>' + esc(r.change_made) + '</td>' +
+        '<td>' + esc(r.status) + '</td></tr>';
+    }
+    body.innerHTML = html;
+    if (rounds.length > 0) {
+      statusEl.innerHTML = '<strong>Sprint status:</strong> ' + rounds.length +
+        ' of ' + TOTAL_ROUNDS + ' rounds complete. Last update: ' +
+        esc(rounds[rounds.length - 1].time) + '.';
+    }
+  }
+
+  fetch('rounds.json')
+    .then(function (resp) { return resp.json(); })
+    .then(function (data) { render((data && data.rounds) || []); })
+    .catch(function () { render([]); });
+})();
+</script>
+
+</body>
+</html>
