@@ -110,6 +110,27 @@
       ]
     },
     {
+      "kicker": "Around town · Robstown",
+      "title": "Church of Grace",
+      "body": "Our neighbors down Main Avenue — a Southern Baptist congregation a short walk from the hotel. All are welcome.",
+      "bullets": [
+        {
+          "lead": "Sunday",
+          "text": "Sunday School 9:00 AM, worship 10:00 AM — 211 E Main Ave."
+        },
+        {
+          "lead": "Wednesday",
+          "text": "Bible study 7:00–8:00 PM."
+        },
+        {
+          "lead": "Pastor",
+          "text": "Chris DeLuna. Service times and sermons at facebook.com/churchofgracerobstown."
+        }
+      ],
+      "foot": "Church of Grace · 211 E Main Ave, Robstown · Southern Baptist · Sources: SermonAudio and public listings, Nov 7, 2026",
+      "note": "The church’s own website (churchofgrace.cc) would not load on Nov 7, so times are from its SermonAudio page and public listings. The Wednesday time was corrected from 6:30 PM to 7:00 PM."
+    },
+    {
       "kicker": "Around town",
       "title": "Getting around Robstown",
       "bullets": [
