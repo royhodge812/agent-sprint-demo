@@ -55,6 +55,14 @@
       "round": 7,
       "status": "complete",
       "time": "2026-11-07T11:15:00-06:00"
+    },
+    {
+      "change_made": "Filled Slot 1 on the 'Fixing the Brendle — episode slots' slide with the next episode — the windows — in the lobby loop artifact (hotel-brendle-lobby-loop-preview). Builder verified in source: Slot 1 carries the exact episode text, Slot 2 unchanged, source line added beneath the slots, both 'Be careful kids, have fun' sign-offs intact, no new slide added. Same Slot 1 text and source line written to slides.json on GitHub — read-back confirmed 14 slides, Slot 1 updated. Final sprint round (8 of 8).",
+      "gemini_found": "WINDOWS is the strongest next episode: clearest problem-repair-result arc on camera, most significant for a 1914 landmark. NPS Preservation Brief 9, 'The Repair of Historic Wooden Windows': repair is almost always more appropriate and energy-efficient than replacement; original windows are integral to a historic building's character and significance; weatherstripping and storm windows can make historic windows as efficient as new ones; fitting windows into a 1914 hotel involves uneven openings, deteriorated framing, and compatibility with historic materials. Draft slot text: 'Watch as we tackle the hotel's historic windows, uncovering their past, executing careful repairs, and revealing a clear view to the future.' No grounding sources were returned with the reply.",
+      "muse_verified_or_corrected": "CONFIRMED NPS Preservation Brief 9 exists (John H. Myers, NPS) and its repair-before-replace message, weatherstripping plus storm-window weatherization, and repair classes — verified against the brief's full text and multiple secondary sources. CORRECTED the load: the Oct 31 trailer-load was windows AND doors (work log HB-20261024-01 / HB-20261031-02), not windows only — the slot text says windows and doors. CORRECTED the bathroom premise in my own prompt: the flush test is DONE (Roy reported Oct 31), not still pending — it did not affect the pick, since windows won on the visual arc. TIGHTENED Gemini's draft slot text: the episode follows the staged windows and doors going into the 1914 hotel; no claim they are restored originals, since that is not established. LEFT OUT: Gemini's 'uncovering their past' framing (no sourced history for this specific load) and the building-record walk as an episode (kept as a future candidate).",
+      "round": 8,
+      "status": "complete",
+      "time": "2026-11-07T11:57:33-06:00"
     }
   ]
 }
