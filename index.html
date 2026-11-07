@@ -22,17 +22,28 @@ li::before{content:"\2014";position:absolute;left:0;color:var(--gold)}
 .foot{margin-top:22px;color:var(--muted);font-size:clamp(14px,1.7vw,20px);font-style:italic}
 #bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 22px;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--muted);background:linear-gradient(transparent,rgba(0,0,0,.55))}
 #bar a{color:var(--gold);text-decoration:none}
+#nav{display:flex;gap:8px;align-items:center}
+.nav-btn{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:Arial,Helvetica,sans-serif;font-size:13px;padding:6px 12px;border-radius:20px;cursor:pointer}
+.nav-btn:hover{background:var(--gold);color:#0b0b0d}
 #dots{display:flex;gap:8px}
-#dots span{width:9px;height:9px;border-radius:50%;background:#3a3a40}
-#dots span.on{background:var(--gold)}
+#dots button{width:11px;height:11px;border-radius:50%;background:#3a3a40;border:none;cursor:pointer;padding:0}
+#dots button.on{background:var(--gold)}
 #err{padding:40px;font-family:Arial,sans-serif}
 </style>
 </head>
 <body>
 <div id="slide"><div class="kicker" id="kicker"></div><h1 id="title"></h1><div class="body" id="body"></div><div class="foot" id="foot"></div></div>
-<div id="bar"><span>Hotel Brendle &middot; Robstown, Texas</span><span id="dots"></span><span><a href="board.html">Sprint board &mdash; watch the agents build this loop</a> &middot; <span id="clock"></span></span></div>
+<div id="bar">
+<span id="nav">
+<button class="nav-btn" id="prevBtn" type="button" aria-label="Previous slide">&larr; Prev</button>
+<button class="nav-btn" id="nextBtn" type="button" aria-label="Next slide">Next &rarr;</button>
+<button class="nav-btn" id="pauseBtn" type="button" aria-label="Pause auto-advance">&#10074;&#10074; Pause</button>
+</span>
+<span id="dots"></span>
+<span><a href="board.html">Sprint board &mdash; watch the agents build this loop</a> &middot; <span id="clock"></span></span>
+</div>
 <script>
-var slides=[], i=0;
+var slides=[], i=0, timer=null, paused=false;
 function render(){
   var s=slides[i]; if(!s) return;
   document.getElementById('kicker').textContent=s.kicker||'';
@@ -48,12 +59,23 @@ function render(){
   if(s.note){ var np=document.createElement('p'); np.className='note'; np.textContent=s.note; b.appendChild(np); }
   document.getElementById('foot').textContent=s.foot||'';
   var d=document.getElementById('dots'); d.innerHTML='';
-  slides.forEach(function(_,k){ var sp=document.createElement('span'); if(k===i) sp.className='on'; d.appendChild(sp); });
+  slides.forEach(function(_,k){ var btn=document.createElement('button'); btn.type='button'; btn.setAttribute('aria-label','Go to slide '+(k+1)); if(k===i) btn.className='on';
+    btn.addEventListener('click', function(){ go(k); }); d.appendChild(btn); });
 }
-function next(){ i=(i+1)%slides.length; render(); }
+function restart(){ if(timer) clearInterval(timer); if(!paused) timer=setInterval(function(){ go(i+1); }, 9000); }
+function go(k){ i=(k+slides.length)%slides.length; render(); restart(); }
+function togglePause(){ paused=!paused; document.getElementById('pauseBtn').innerHTML = paused ? '&#9654; Play' : '&#10074;&#10074; Pause'; restart(); }
+document.getElementById('prevBtn').addEventListener('click', function(){ go(i-1); });
+document.getElementById('nextBtn').addEventListener('click', function(){ go(i+1); });
+document.getElementById('pauseBtn').addEventListener('click', togglePause);
+document.addEventListener('keydown', function(e){
+  if(e.key==='ArrowLeft'){ go(i-1); }
+  else if(e.key==='ArrowRight'){ go(i+1); }
+  else if(e.key===' '){ e.preventDefault(); togglePause(); }
+});
 fetch('slides.json').then(function(r){ return r.json(); }).then(function(j){
   slides=j.slides||[];
-  if(slides.length){ render(); setInterval(next, 9000); }
+  if(slides.length){ render(); restart(); }
   else document.getElementById('slide').innerHTML='<div id="err">The loop is empty right now — check back soon.</div>';
 }).catch(function(){ document.getElementById('slide').innerHTML='<div id="err">Could not load the loop slides. Check back soon.</div>'; });
 setInterval(function(){ var d=new Date(); document.getElementById('clock').textContent=d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}); }, 1000);
