@@ -217,13 +217,14 @@
       "bullets": [
         {
           "lead": "Slot 1",
-          "text": "The first fix drops here. This spot is held for a Fixing the Brendle episode — when the video is ready, it plays right here, between the room tour and the community notices."
+          "text": "Next up: the windows. A trailer-load of windows and doors is staged in the Factory across Main — this episode, they go into the 1914 hotel, one opening at a time."
         },
         {
           "lead": "Slot 2",
           "text": "Room for the next fix. A second held spot, ready for the next episode — one problem, one repair, one result, shared with the whole community."
         }
       ],
+      "foot": "Proposed in the Nov 7, 2026 lobby-loop sprint, from the hotel's real work — windows and doors staged in the Factory Oct 31. Preservation context: NPS Preservation Brief 9, 'The Repair of Historic Wooden Windows.'",
       "kicker": "Fixing the Brendle",
       "title": "Fixing the Brendle — episode slots"
     },
