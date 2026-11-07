@@ -119,8 +119,6 @@
       "title": "Route 27 — the bus at our corner"
     },
     {
-      "kicker": "Around town · Robstown",
-      "title": "The railroad built this town",
       "body": "Robstown began about 1906 at the junction of two railroads — the Texas-Mexican and the St. Louis, Brownsville & Mexico. The hotel opened in 1914 right at that junction, and freight trains still roll past the hotel today.",
       "bullets": [
         {
@@ -141,7 +139,30 @@
         }
       ],
       "foot": "Sources: Handbook of Texas (TSHA), Texas Railroad History — Tower 197, Texas Historical Commission Marker No. 22460 (2019) · Nov 7, 2026",
-      "note": "Water tower: its height, date, and lettering could not be confirmed in public sources this round, so the slide only points guests to look northeast — per the hotel’s own site notes. The Oct 2024 tank collapse south of Robstown was a ground storage tank, not this tower, and was left out."
+      "kicker": "Around town · Robstown",
+      "note": "Water tower: its height, date, and lettering could not be confirmed in public sources this round, so the slide only points guests to look northeast — per the hotel’s own site notes. The Oct 2024 tank collapse south of Robstown was a ground storage tank, not this tower, and was left out.",
+      "title": "The railroad built this town"
+    },
+    {
+      "body": "A no-frills, old-school burger joint about a mile west of the hotel on W Ave J — cheap, friendly, and a local favorite. Open right now for lunch.",
+      "bullets": [
+        {
+          "lead": "Hours",
+          "text": "Saturday 10:00 AM – 3:00 PM (early close on Saturdays); Sunday–Friday 10:00 AM – 9:00 PM."
+        },
+        {
+          "lead": "Find it",
+          "text": "312 W Ave J, Robstown — about a mile west of the hotel. Phone (361) 387-6133."
+        },
+        {
+          "lead": "Order",
+          "text": "Locals swear by the Double Cheese Burger and the Super Roll; the Super Burrito with Chili and Cheese is the other house favorite. Drive-through, takeout, and delivery."
+        }
+      ],
+      "foot": "Beefy Burger · 312 W Ave J, Robstown · Hours verified Nov 7, 2026",
+      "kicker": "Around town · Robstown",
+      "note": "Gemini first suggested Whataburger, a chain — the loop uses Beefy Burger, a local favorite, instead. Hours verified from two listings Nov 7, 2026.",
+      "title": "Beefy Burger — lunch, the local way"
     },
     {
       "bullets": [
@@ -168,8 +189,6 @@
       "title": "Fixing the Brendle"
     },
     {
-      "kicker": "Fixing the Brendle",
-      "title": "Fixing the Brendle — episode slots",
       "bullets": [
         {
           "lead": "Slot 1",
@@ -179,7 +198,9 @@
           "lead": "Slot 2",
           "text": "Room for the next fix. A second held spot, ready for the next episode — one problem, one repair, one result, shared with the whole community."
         }
-      ]
+      ],
+      "kicker": "Fixing the Brendle",
+      "title": "Fixing the Brendle — episode slots"
     },
     {
       "body": "Whether you live here, you’re passing through, or you just stopped in out of the Texas heat — welcome. See more of the hotel and the restoration at brendlehotel.com.",
